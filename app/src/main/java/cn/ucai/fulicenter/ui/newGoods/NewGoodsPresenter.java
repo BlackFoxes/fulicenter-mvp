@@ -2,9 +2,6 @@ package cn.ucai.fulicenter.ui.newGoods;
 
 import android.content.Context;
 
-import org.androidannotations.annotations.Bean;
-import org.androidannotations.annotations.EBean;
-
 import java.util.ArrayList;
 
 import cn.ucai.fulicenter.constants.I;
@@ -17,17 +14,16 @@ import cn.ucai.fulicenter.data.utils.ConvertUtils;
 /**
  * Created by clawpo on 2017/1/3.
  */
-@EBean
 public class NewGoodsPresenter implements NewGoodsContract.Presenter {
     NewGoodsContract.View mView;
 
-    @Bean(ModelNewGoods.class)
     IModelNewGoods model;
 
     int mAction;
     int pageId;
 
     public NewGoodsPresenter(NewGoodsFragment fragment) {
+        model = new ModelNewGoods();
         mView = fragment;
         mView.setPresenter(this);
     }

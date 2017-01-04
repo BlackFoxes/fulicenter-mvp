@@ -29,7 +29,7 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
     public void gotoMain() {
         L.e("SplashActivity","gotoMain");
         MFGT.gotoMain(this);
-        MFGT.finish(SplashActivity.this);
+        MFGT.finish(this);
     }
 
     @Override
