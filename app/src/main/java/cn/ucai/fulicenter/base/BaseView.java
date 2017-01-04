@@ -1,4 +1,4 @@
-package cn.ucai.fulicenter.ui.base;
+package cn.ucai.fulicenter.base;
 
 /**
  * Created by clawpo on 2017/1/3.

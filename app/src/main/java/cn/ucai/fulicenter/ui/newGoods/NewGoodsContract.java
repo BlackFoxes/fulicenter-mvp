@@ -1,7 +1,7 @@
 package cn.ucai.fulicenter.ui.newGoods;
 
-import cn.ucai.fulicenter.ui.base.BasePresenter;
-import cn.ucai.fulicenter.ui.base.BaseView;
+import cn.ucai.fulicenter.base.BasePresenter;
+import cn.ucai.fulicenter.base.BaseView;
 
 /**
  * Created by clawpo on 2017/1/3.
