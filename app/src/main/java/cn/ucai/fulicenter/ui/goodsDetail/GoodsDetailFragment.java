@@ -1,4 +1,4 @@
-package cn.ucai.todomvp.tasks;
+package cn.ucai.fulicenter.ui.goodsDetail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,8 +8,8 @@ import android.support.v4.app.Fragment;
  * Created by clawpo on 2017/1/3.
  */
 
-public class TasksFragment extends Fragment implements TasksContract.View {
-    TasksContract.Presenter mPresenter;
+public class GoodsDetailFragment extends Fragment implements GoodsDetailContract.View {
+    GoodsDetailContract.Presenter mPresenter;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,7 @@ public class TasksFragment extends Fragment implements TasksContract.View {
     }
 
     @Override
-    public void setPresenter(TasksContract.Presenter presenter) {
+    public void setPresenter(GoodsDetailContract.Presenter presenter) {
 
     }
 }

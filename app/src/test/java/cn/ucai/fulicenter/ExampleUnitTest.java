@@ -1,4 +1,4 @@
-package cn.ucai.todomvp;
+package cn.ucai.fulicenter;
 
 import org.junit.Test;
 
