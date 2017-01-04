@@ -25,7 +25,7 @@ public class NewGoodsPresenter implements NewGoodsContract.Presenter {
     public NewGoodsPresenter(NewGoodsFragment fragment) {
         model = new ModelNewGoods();
         mView = fragment;
-        mView.setPresenter(this);
+//        mView.setPresenter(this);
     }
 
     @Override

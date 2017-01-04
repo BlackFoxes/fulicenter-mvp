@@ -23,7 +23,7 @@ public class BoutiquePresenter implements BoutiqueContract.Presenter {
         L.e("BoutiquePresenter","BoutiquePresenter mView.setPresenter");
         model = new ModelBoutique();
         mView = fragment;
-        mView.setPresenter(this);
+//        mView.setPresenter(this);
     }
 
     @Override
