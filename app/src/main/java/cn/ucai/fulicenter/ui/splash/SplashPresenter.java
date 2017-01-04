@@ -33,6 +33,7 @@ public class SplashPresenter implements SplashContract.Presenter {
                 FuLiCenterApplication.setUser(user);
             }
         }
+        L.e("splash","user="+user);
         mView.gotoMain();
     }
 
