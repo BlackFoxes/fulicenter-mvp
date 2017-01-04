@@ -21,8 +21,6 @@ import cn.ucai.fulicenter.data.utils.L;
 import cn.ucai.fulicenter.ui.adapter.BoutiqueAdapter;
 import cn.ucai.fulicenter.ui.view.SpaceItemDecoration;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 /**
  * Created by clawpo on 2016/12/27.
  */
@@ -106,7 +104,7 @@ public class BoutiquesFragment extends Fragment implements BoutiqueContract.View
 
     @Override
     public void setPresenter(BoutiqueContract.Presenter presenter) {
-        L.e("boutique","setPresenter presenter="+presenter);
-        mPresenter = checkNotNull(presenter);
+//        L.e("boutique","setPresenter presenter="+presenter);
+//        mPresenter = checkNotNull(presenter);
     }
 }

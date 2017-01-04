@@ -23,8 +23,6 @@ import cn.ucai.fulicenter.data.utils.L;
 import cn.ucai.fulicenter.ui.adapter.GoodsAdapter;
 import cn.ucai.fulicenter.ui.view.SpaceItemDecoration;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 /**
  * Created by clawpo on 2017/1/3.
  */
@@ -112,7 +110,7 @@ public class NewGoodsFragment extends Fragment implements NewGoodsContract.View 
 
     @Override
     public void setPresenter(@NonNull NewGoodsContract.Presenter presenter) {
-        mPresenter = checkNotNull(presenter);
+//        mPresenter = checkNotNull(presenter);
     }
 
     @Override
