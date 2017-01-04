@@ -15,6 +15,7 @@ import cn.ucai.fulicenter.R;
 import cn.ucai.fulicenter.application.FuLiCenterApplication;
 import cn.ucai.fulicenter.constants.I;
 import cn.ucai.fulicenter.ui.boutique.BoutiquesFragment_;
+import cn.ucai.fulicenter.ui.category.CategoryFragment_;
 import cn.ucai.fulicenter.ui.newGoods.NewGoodsFragment_;
 
 @EActivity(R.layout.activity_main)
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         mFragments = new Fragment[5];
         mFragments[0] = mNewGoodsFragment = new NewGoodsFragment_();
         mFragments[1] = mBoutiqueFragment = new BoutiquesFragment_();
-//        mFragments[2] = mCategoryFragment = new CategoryFragment_();
+        mFragments[2] = mCategoryFragment = new CategoryFragment_();
 //        mFragments[3] = mCartFragment = new CartFragment_();
 //        mFragments[4] = mPersonalFragment = new PersonalFragment_();
         getSupportFragmentManager()
