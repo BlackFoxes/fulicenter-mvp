@@ -11,6 +11,7 @@ import cn.ucai.fulicenter.constants.I;
 import cn.ucai.fulicenter.data.bean.BoutiqueBean;
 import cn.ucai.fulicenter.data.bean.CategoryChildBean;
 import cn.ucai.fulicenter.ui.MainActivity_;
+import cn.ucai.fulicenter.ui.boutique.child.BoutiqueChildActivity_;
 import cn.ucai.fulicenter.ui.goodsDetail.GoodsDetailActivity_;
 
 /**
@@ -52,8 +53,8 @@ public class MFGT {
 //                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
     }
     public static void gotoBoutiqueChildActivity(Context context, BoutiqueBean bean){
-//        BoutiqueChildActivity_.intent(context).extra(I.Boutique.CAT_ID,bean).start()
-//                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
+        BoutiqueChildActivity_.intent(context).extra(I.Boutique.CAT_ID,bean).start()
+                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
     }
 
     public static void gotoCategoryChildActivity(Context context, int catId, String groupName, ArrayList<CategoryChildBean> list){
