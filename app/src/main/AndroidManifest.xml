@@ -39,6 +39,8 @@
         </activity>
         <activity android:name=".ui.MainActivity_">
         </activity>
+        <activity android:name=".ui.goodsDetail.GoodsDetailActivity_">
+        </activity>
     </application>
 
 </manifest>

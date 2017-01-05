@@ -7,9 +7,11 @@ import android.content.Intent;
 import java.util.ArrayList;
 
 import cn.ucai.fulicenter.R;
+import cn.ucai.fulicenter.constants.I;
 import cn.ucai.fulicenter.data.bean.BoutiqueBean;
 import cn.ucai.fulicenter.data.bean.CategoryChildBean;
 import cn.ucai.fulicenter.ui.MainActivity_;
+import cn.ucai.fulicenter.ui.goodsDetail.GoodsDetailActivity_;
 
 /**
  * Created by clawpo on 2016/12/27.
@@ -39,10 +41,10 @@ public class MFGT {
     }
 
     public static void gotoGoodsDetailsActivity(Context context, int goodsId) {
-//        Intent intent = new Intent();
-//        intent.setClass(context, GoodsDetailActivity_.class);
-//        intent.putExtra(I.GoodsDetails.KEY_GOODS_ID,goodsId);
-//        startActivity(context,intent);
+        Intent intent = new Intent();
+        intent.setClass(context, GoodsDetailActivity_.class);
+        intent.putExtra(I.GoodsDetails.KEY_GOODS_ID,goodsId);
+        startActivity(context,intent);
     }
 
     public static void gotoLogin(Context context){
