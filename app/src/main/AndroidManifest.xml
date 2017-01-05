@@ -43,6 +43,8 @@
         </activity>
         <activity android:name=".ui.boutique.child.BoutiqueChildActivity_">
         </activity>
+        <activity android:name=".ui.category.child.CategoryChildActivity_">
+        </activity>
     </application>
 
 </manifest>

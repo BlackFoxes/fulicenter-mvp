@@ -5,6 +5,7 @@ import android.widget.ExpandableListView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
 
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import cn.ucai.fulicenter.R;
 import cn.ucai.fulicenter.data.bean.CategoryChildBean;
 import cn.ucai.fulicenter.data.bean.CategoryGroupBean;
+import cn.ucai.fulicenter.data.utils.L;
 import cn.ucai.fulicenter.ui.adapter.CategoryAdapter;
 
 
@@ -49,5 +51,12 @@ public class CategoryFragment extends Fragment implements CategoryContract.View 
     @Override
     public void setPresenter(CategoryContract.Presenter presenter) {
 
+    }
+
+    @Click void layout_category_fragment(){
+        L.e("category","adapter.size="+mAdapter.getGroupCount());
+        if(mAdapter.getGroupCount()==0){
+            downloadGroup();
+        }
     }
 }

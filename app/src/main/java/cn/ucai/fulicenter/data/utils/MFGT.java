@@ -12,6 +12,7 @@ import cn.ucai.fulicenter.data.bean.BoutiqueBean;
 import cn.ucai.fulicenter.data.bean.CategoryChildBean;
 import cn.ucai.fulicenter.ui.MainActivity_;
 import cn.ucai.fulicenter.ui.boutique.child.BoutiqueChildActivity_;
+import cn.ucai.fulicenter.ui.category.child.CategoryChildActivity_;
 import cn.ucai.fulicenter.ui.goodsDetail.GoodsDetailActivity_;
 
 /**
@@ -58,12 +59,12 @@ public class MFGT {
     }
 
     public static void gotoCategoryChildActivity(Context context, int catId, String groupName, ArrayList<CategoryChildBean> list){
-//        Intent intent = new Intent();
-//        intent.setClass(context, CategoryChildActivity_.class);
-//        intent.putExtra(I.CategoryChild.CAT_ID,catId);
-//        intent.putExtra(I.CategoryGroup.NAME,groupName);
-//        intent.putExtra(I.CategoryChild.ID,list);
-//        startActivity(context,intent);
+        Intent intent = new Intent();
+        intent.setClass(context, CategoryChildActivity_.class);
+        intent.putExtra(I.CategoryChild.CAT_ID,catId);
+        intent.putExtra(I.CategoryGroup.NAME,groupName);
+        intent.putExtra(I.CategoryChild.ID,list);
+        startActivity(context,intent);
     }
     public static void gotoRegister(Activity context){
 //        RegisterActivity_.intent(context)
