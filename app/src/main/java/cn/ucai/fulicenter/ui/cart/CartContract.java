@@ -17,6 +17,7 @@ public interface CartContract {
         void downloadCart(Context context);
         void sumPrice();
         void buy();
+        void deleteGoods(CartBean bean);
     }
 
     interface View extends BaseView<Presenter>{

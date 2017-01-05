@@ -17,6 +17,7 @@ import cn.ucai.fulicenter.data.bean.MessageBean;
 import cn.ucai.fulicenter.data.net.IModelGoodsDetail;
 import cn.ucai.fulicenter.data.net.ModelGoodsDetail;
 import cn.ucai.fulicenter.data.net.OnCompleteListener;
+import cn.ucai.fulicenter.data.utils.L;
 import cn.ucai.fulicenter.ui.view.CartViewHolder;
 import cn.ucai.fulicenter.ui.view.CartViewHolder_;
 
@@ -83,8 +84,9 @@ public class CartAdapter extends RecyclerViewAdapterBase<CartBean,CartViewHolder
                         @Override
                         public void onSuccess(MessageBean result) {
                             if(result!=null && result.isSuccess()){
-                                items.remove(position);
-                                mContext.sendBroadcast(new Intent(I.BROADCAST_UPDATA_CART));
+                                CartBean bean = items.remove(position);
+                                L.e("cart","delete cart="+bean);
+                                mContext.sendBroadcast(new Intent(I.BROADCAST_DELETE_CART).putExtra(I.Cart.GOODS_ID,bean));
                                 notifyDataSetChanged();
                             }
                         }

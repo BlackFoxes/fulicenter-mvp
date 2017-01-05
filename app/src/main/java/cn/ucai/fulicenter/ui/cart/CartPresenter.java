@@ -72,6 +72,11 @@ public class CartPresenter implements CartContract.Presenter {
     }
 
     @Override
+    public void deleteGoods(CartBean bean) {
+        mList.remove(bean);
+    }
+
+    @Override
     public void sumPrice(){
         cartIds = "";
         int sumPrice = 0;

@@ -57,6 +57,7 @@ public class CartFragment extends Fragment implements CartContract.View {
     CartContract.Presenter mPresenter;
 
     updateCartReceiver mReceiver;
+    deleteCartReceiver mDeleteReceiver;
 //    String cartIds="";
     @AfterViews void init(){
         mPresenter = new CartPresenter(this);
@@ -80,7 +81,10 @@ public class CartFragment extends Fragment implements CartContract.View {
         setPullDownListener();
         IntentFilter filter = new IntentFilter(I.BROADCAST_UPDATA_CART);
         mReceiver = new updateCartReceiver();
+        IntentFilter filter2 = new IntentFilter(I.BROADCAST_DELETE_CART);
+        mDeleteReceiver = new deleteCartReceiver();
         getContext().registerReceiver(mReceiver,filter);
+        getContext().registerReceiver(mDeleteReceiver,filter2);
     }
 
     private void setPullDownListener() {
@@ -172,12 +176,25 @@ public class CartFragment extends Fragment implements CartContract.View {
             mPresenter.sumPrice();
         }
     }
+    class deleteCartReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            CartBean bean = (CartBean) intent.getSerializableExtra(I.Cart.GOODS_ID);
+            L.e(TAG,"deleteCartReceiver..."+bean);
+            mPresenter.deleteGoods(bean);
+            mPresenter.sumPrice();
+        }
+    }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         if(mReceiver!=null){
             getContext().unregisterReceiver(mReceiver);
+        }
+        if(mDeleteReceiver!=null){
+            getContext().unregisterReceiver(mDeleteReceiver);
         }
     }
 
