@@ -53,6 +53,8 @@
         </activity>
         <activity android:name=".ui.login.LoginActivity_">
         </activity>
+        <activity android:name=".ui.register.RegisterActivity_">
+        </activity>
     </application>
 
 </manifest>

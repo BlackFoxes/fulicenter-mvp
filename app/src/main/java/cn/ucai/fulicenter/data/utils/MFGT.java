@@ -18,6 +18,7 @@ import cn.ucai.fulicenter.ui.login.LoginActivity_;
 import cn.ucai.fulicenter.ui.personalCenter.collect.CollectsActivity_;
 import cn.ucai.fulicenter.ui.personalCenter.settings.UserProfileActivity_;
 import cn.ucai.fulicenter.ui.personalCenter.updateNick.UpdateNickActivity_;
+import cn.ucai.fulicenter.ui.register.RegisterActivity_;
 
 /**
  * Created by clawpo on 2016/12/27.
@@ -71,9 +72,9 @@ public class MFGT {
         startActivity(context,intent);
     }
     public static void gotoRegister(Activity context){
-//        RegisterActivity_.intent(context)
-//                .startForResult(I.REQUEST_CODE_REGISTER)
-//                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
+        RegisterActivity_.intent(context)
+                .startForResult(I.REQUEST_CODE_REGISTER)
+                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
     }
 
     public static void gotoSettings(Activity activity) {
