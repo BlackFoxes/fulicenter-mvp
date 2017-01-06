@@ -15,6 +15,7 @@ import cn.ucai.fulicenter.ui.boutique.child.BoutiqueChildActivity_;
 import cn.ucai.fulicenter.ui.category.child.CategoryChildActivity_;
 import cn.ucai.fulicenter.ui.goodsDetail.GoodsDetailActivity_;
 import cn.ucai.fulicenter.ui.personalCenter.collect.CollectsActivity_;
+import cn.ucai.fulicenter.ui.personalCenter.settings.UserProfileActivity_;
 
 /**
  * Created by clawpo on 2016/12/27.
@@ -74,8 +75,8 @@ public class MFGT {
     }
 
     public static void gotoSettings(Activity activity) {
-//        UserProfileActivity_.intent(activity).start()
-//                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
+        UserProfileActivity_.intent(activity).start()
+                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
     }
 
     public static void gotoUpdateNick(Activity activity) {
