@@ -12,6 +12,7 @@ import cn.ucai.fulicenter.data.net.IModelUser;
 import cn.ucai.fulicenter.data.net.ModelGoodsDetail;
 import cn.ucai.fulicenter.data.net.ModelUser;
 import cn.ucai.fulicenter.data.net.OnCompleteListener;
+import cn.ucai.fulicenter.data.utils.L;
 import cn.ucai.fulicenter.data.utils.ResultUtils;
 
 /**
@@ -33,6 +34,7 @@ public class PersonalPresenter implements PersonalContract.Presenter {
 
     @Override
     public void start() {
+        L.e("personal--","start...");
         initUser();
         if (user!=null){
             mView.showUserInfo(user);
@@ -41,56 +43,74 @@ public class PersonalPresenter implements PersonalContract.Presenter {
 
     @Override
     public void getCollectsCount(Context context) {
-        detailModel.getCollectsCount(context, user.getMuserName(), new OnCompleteListener<MessageBean>() {
-            @Override
-            public void onSuccess(MessageBean result) {
-                if (result != null && result.isSuccess()) {
-                    mView.setCollectCount(Integer.valueOf(result.getMsg()));
-                } else {
+        L.e("personal--","getCollectsCount...");
+        if (checkUser()) {
+            L.e("personal--","getCollectsCount...getcount");
+            detailModel.getCollectsCount(context, user.getMuserName(), new OnCompleteListener<MessageBean>() {
+                @Override
+                public void onSuccess(MessageBean result) {
+                    if (result != null && result.isSuccess()) {
+                        mView.setCollectCount(Integer.valueOf(result.getMsg()));
+                    } else {
+                        mView.setCollectCount(0);
+                    }
+                }
+
+                @Override
+                public void onError(String error) {
                     mView.setCollectCount(0);
                 }
-            }
-
-            @Override
-            public void onError(String error) {
-                mView.setCollectCount(0);
-            }
-        });
+            });
+        }
     }
 
+    private boolean checkUser(){
+        if (user==null){
+            user = FuLiCenterApplication.getUser();
+        }
+        L.e("personal--","checkUser...use="+user);
+        if (user==null){
+            mView.showLogin();
+            return false;
+        }
+        return true;
+    }
     @Override
     public void syncUserInfo(final Context context) {
-        model.syncUserInfo(context, user.getMuserName(), new OnCompleteListener<String>() {
-            @Override
-            public void onSuccess(String s) {
-                Result result = ResultUtils.getResultFromJson(s, User.class);
-                if (result != null) {
-                    User u = (User) result.getRetData();
-                    if (!user.equals(u)) {
-                        UserDao dao = new UserDao(context);
-                        boolean b = dao.saveUser(u);
-                        if (b) {
-                            FuLiCenterApplication.setUser(u);
-                            user = u;
-                            mView.showUserInfo(user);
+        L.e("personal--","syncUserInfo...");
+        if (checkUser()) {
+            L.e("personal--","syncUserInfo...sync");
+            model.syncUserInfo(context, user.getMuserName(), new OnCompleteListener<String>() {
+                @Override
+                public void onSuccess(String s) {
+                    Result result = ResultUtils.getResultFromJson(s, User.class);
+                    if (result != null) {
+                        User u = (User) result.getRetData();
+                        if (!user.equals(u)) {
+                            UserDao dao = new UserDao(context);
+                            boolean b = dao.saveUser(u);
+                            if (b) {
+                                FuLiCenterApplication.setUser(u);
+                                user = u;
+                                mView.showUserInfo(user);
+                            }
                         }
                     }
                 }
-            }
 
-            @Override
-            public void onError(String error) {
+                @Override
+                public void onError(String error) {
 
-            }
-        });
+                }
+            });
+        }
     }
 
     @Override
     public void initUser() {
-        user = FuLiCenterApplication.getUser();
-        if (user == null) {
-            mView.showLogin();
-        } else {
+        L.e("personal--","initUser...");
+        if (checkUser()) {
+            L.e("personal--","initUser...show");
             mView.showUserInfo(user);
         }
     }

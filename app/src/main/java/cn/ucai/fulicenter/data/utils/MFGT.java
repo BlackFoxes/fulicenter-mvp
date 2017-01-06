@@ -14,6 +14,7 @@ import cn.ucai.fulicenter.ui.MainActivity_;
 import cn.ucai.fulicenter.ui.boutique.child.BoutiqueChildActivity_;
 import cn.ucai.fulicenter.ui.category.child.CategoryChildActivity_;
 import cn.ucai.fulicenter.ui.goodsDetail.GoodsDetailActivity_;
+import cn.ucai.fulicenter.ui.login.LoginActivity_;
 import cn.ucai.fulicenter.ui.personalCenter.collect.CollectsActivity_;
 import cn.ucai.fulicenter.ui.personalCenter.settings.UserProfileActivity_;
 import cn.ucai.fulicenter.ui.personalCenter.updateNick.UpdateNickActivity_;
@@ -53,8 +54,8 @@ public class MFGT {
     }
 
     public static void gotoLogin(Context context){
-//        LoginActivity_.intent(context).startForResult(I.REQUEST_CODE_LOGIN)
-//                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
+        LoginActivity_.intent(context).startForResult(I.REQUEST_CODE_LOGIN)
+                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
     }
     public static void gotoBoutiqueChildActivity(Context context, BoutiqueBean bean){
         BoutiqueChildActivity_.intent(context).extra(I.Boutique.CAT_ID,bean).start()

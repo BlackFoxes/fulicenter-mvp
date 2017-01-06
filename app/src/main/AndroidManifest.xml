@@ -51,6 +51,8 @@
         </activity>
         <activity android:name=".ui.personalCenter.updateNick.UpdateNickActivity_">
         </activity>
+        <activity android:name=".ui.login.LoginActivity_">
+        </activity>
     </application>
 
 </manifest>

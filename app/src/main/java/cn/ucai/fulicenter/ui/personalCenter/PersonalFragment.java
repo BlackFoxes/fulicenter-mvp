@@ -17,6 +17,7 @@ import java.util.HashMap;
 import cn.ucai.fulicenter.R;
 import cn.ucai.fulicenter.data.bean.User;
 import cn.ucai.fulicenter.data.utils.ImageLoader;
+import cn.ucai.fulicenter.data.utils.L;
 import cn.ucai.fulicenter.data.utils.MFGT;
 
 /**
@@ -69,6 +70,7 @@ public class PersonalFragment extends Fragment implements PersonalContract.View 
 
     @Override
     public void onResume() {
+        L.e("personal","onResume...");
         super.onResume();
         mPresenter.start();
         mPresenter.syncUserInfo(getContext());
@@ -97,6 +99,7 @@ public class PersonalFragment extends Fragment implements PersonalContract.View 
 
     @Override
     public void showUserInfo(User user) {
+        L.e("personal","showUserInfo...");
         ImageLoader.setAvatar(ImageLoader.getAvatarUrl(user), getContext(), mIvUserAvatar);
         mTvUserName.setText(user.getMuserNick());
     }

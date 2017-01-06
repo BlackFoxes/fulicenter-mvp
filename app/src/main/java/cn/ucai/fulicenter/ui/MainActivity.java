@@ -14,6 +14,7 @@ import org.androidannotations.annotations.ViewById;
 import cn.ucai.fulicenter.R;
 import cn.ucai.fulicenter.application.FuLiCenterApplication;
 import cn.ucai.fulicenter.constants.I;
+import cn.ucai.fulicenter.data.utils.MFGT;
 import cn.ucai.fulicenter.ui.boutique.BoutiquesFragment_;
 import cn.ucai.fulicenter.ui.cart.CartFragment_;
 import cn.ucai.fulicenter.ui.category.CategoryFragment_;
@@ -73,10 +74,18 @@ public class MainActivity extends AppCompatActivity {
                 index = 2;
                 break;
             case R.id.layout_cart:
-                index = 3;
+                if(FuLiCenterApplication.getUser()==null){
+                    MFGT.gotoLogin(this);
+                }else {
+                    index = 3;
+                }
                 break;
             case R.id.layout_personal_center:
-                index = 4;
+                if(FuLiCenterApplication.getUser()==null){
+                    MFGT.gotoLogin(this);
+                }else {
+                    index = 4;
+                }
                 break;
         }
         setFragment();
