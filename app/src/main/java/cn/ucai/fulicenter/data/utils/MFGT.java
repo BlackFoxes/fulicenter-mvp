@@ -14,6 +14,7 @@ import cn.ucai.fulicenter.ui.MainActivity_;
 import cn.ucai.fulicenter.ui.boutique.child.BoutiqueChildActivity_;
 import cn.ucai.fulicenter.ui.category.child.CategoryChildActivity_;
 import cn.ucai.fulicenter.ui.goodsDetail.GoodsDetailActivity_;
+import cn.ucai.fulicenter.ui.personalCenter.collect.CollectsActivity_;
 
 /**
  * Created by clawpo on 2016/12/27.
@@ -82,8 +83,8 @@ public class MFGT {
 //                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
     }
     public static void gotoCollects(Activity context){
-//        CollectsActivity_.intent(context).start()
-//                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
+        CollectsActivity_.intent(context).start()
+                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
     }
     public static void gotoBuy(Context context,String cartIds){
 //        OrderActivity_.intent(context).extra(I.Cart.ID,cartIds)
