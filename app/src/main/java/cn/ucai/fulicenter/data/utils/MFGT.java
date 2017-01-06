@@ -16,6 +16,7 @@ import cn.ucai.fulicenter.ui.category.child.CategoryChildActivity_;
 import cn.ucai.fulicenter.ui.goodsDetail.GoodsDetailActivity_;
 import cn.ucai.fulicenter.ui.personalCenter.collect.CollectsActivity_;
 import cn.ucai.fulicenter.ui.personalCenter.settings.UserProfileActivity_;
+import cn.ucai.fulicenter.ui.personalCenter.updateNick.UpdateNickActivity_;
 
 /**
  * Created by clawpo on 2016/12/27.
@@ -80,8 +81,8 @@ public class MFGT {
     }
 
     public static void gotoUpdateNick(Activity activity) {
-//        UpdateNickActivity_.intent(activity).startForResult(I.REQUEST_CODE_NICK)
-//                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
+        UpdateNickActivity_.intent(activity).startForResult(I.REQUEST_CODE_NICK)
+                .withAnimation(R.anim.push_left_in, R.anim.push_left_out);
     }
     public static void gotoCollects(Activity context){
         CollectsActivity_.intent(context).start()

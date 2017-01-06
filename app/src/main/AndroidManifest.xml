@@ -49,6 +49,8 @@
         </activity>
         <activity android:name=".ui.personalCenter.settings.UserProfileActivity_">
         </activity>
+        <activity android:name=".ui.personalCenter.updateNick.UpdateNickActivity_">
+        </activity>
     </application>
 
 </manifest>
